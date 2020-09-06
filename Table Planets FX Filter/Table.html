@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Table of Planets</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        .table1 {
+            margin: auto;
+            top: 500px;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        th {
+            height: 50px;
+            width: 150px;
+            background-color: purple;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input[type=text] {
+            width: 210px;
+            box-sizing: border-box;
+            border: 2px solid #34495e;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the search field */
+        form.example input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+        }
+
+        /* Style the submit button */
+        form.example button {
+            text-align: center;
+            float: inline;
+            width: 40%;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 20px;
+            border: 1px solid grey;
+            border-left: none;
+            /* Prevent double borders */
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>THE PLANETS</h1>
+    <br>
+    <br>
+
+    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+        <input type="text" placeholder="Search Your Planets" name="search2" id="search2">
+
+    </form>
+    <br>
+    <br>
+    <br>
+
+    <!--Awal dari Tabel-->
+
+    <table class="table1" id="table1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Diameter</th>
+                <th>Climate</th>
+                <th>Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td>Alderaan</td>
+                <td>12500</td>
+                <td>Temperate</td>
+                <td>2000000000</td>
+            </tr>
+            <tr>
+
+                <td>Yavin IV</td>
+                <td>10200</td>
+                <td>Temperate, tropical</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+
+                <td>Hoth</td>
+                <td>7200</td>
+                <td>Frozen</td>
+                <td>Unknown</td>
+            </tr>
+            <tr>
+
+                <td>Dagobah</td>
+                <td>8900</td>
+                <td>Murky</td>
+                <td>Unknown</td>
+            </tr>
+            <tr>
+
+                <td>Bespin</td>
+                <td>118000</td>
+                <td>Temperate</td>
+                <td>6000000</td>
+            </tr>
+            <tr>
+
+                <td>Endor</td>
+                <td>4900</td>
+                <td>Temperate</td>
+                <td>30000000</td>
+            </tr>
+            <tr>
+
+                <td>Naboo</td>
+                <td>12120</td>
+                <td>Temperate</td>
+                <td>4500000000</td>
+            </tr>
+            <tr>
+
+                <td>Coruscant</td>
+                <td>12240</td>
+                <td>Temperate</td>
+                <td>1000000000000</td>
+            </tr>
+            <tr>
+
+                <td>Kamino</td>
+                <td>19720</td>
+                <td>Temperate</td>
+                <td>1000000000</td>
+            </tr>
+            <tr>
+
+                <td>Geonosis</td>
+                <td>11370</td>
+                <td>Temperate, arid</td>
+                <td>100000000000</td>
+            </tr>
+        </tbody>
+    </table>
+    <!--Akhir dari Table-->
+
+    <!--Awal JavaScript Array Filter-->
+    <Script>
+        const searchInput = document.getElementById("search2");
+        const rows = document.querySelectorAll("tbody tr");
+        //console.log(rows);
+
+        searchInput.addEventListener('keyup', function (event) {
+            //console.log(event);
+            const q = event.target.value.toLowerCase();
+            rows.forEach(row => {
+                //console.log(row);
+                row.querySelector('td').textContent.toLowerCase().startsWith(q) ?
+                    (row.style.display = "") :
+                    (row.style.display = 'none');
+            });
+        });
+    </Script>
+    <!--Akhir JavaScript Array Filter-->
+
+
+</body>
+
+</html>
